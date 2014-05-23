@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# require 'faker'
+64.times do
+  Tile.create(name: Faker::Name.name)  
+end
+# require 'date'
+# Tile.all.each do |t|
+#   t.clicks.concat(Array.new(rand(1..99)){Click.create(clicked_on: DateTime.new)})
+# end

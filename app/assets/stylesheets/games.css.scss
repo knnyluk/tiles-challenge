@@ -1,0 +1,20 @@
+// Place all the styles related to the games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  text-align: center;
+}
+
+table {
+  margin: 25px auto;
+
+}
+
+td {
+  text-align: center;
+  width: 90px;
+  height: 90px;
+  padding: 10px;
+  border: 1px solid black;  
+}

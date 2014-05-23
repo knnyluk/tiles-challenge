@@ -1,6 +1,6 @@
 class Tile
   include Mongoid::Document
   field :name, type: String
-  key :name
-  references_many :clicks
+  field :_id, type: String, default: ->{ name }
+  has_many :clicks
 end
