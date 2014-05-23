@@ -19,6 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'sidekiq'
 gem 'json'
 gem 'faker'
+gem 'rails_12factor'
 
 group :test do
   gem 'database_cleaner'
