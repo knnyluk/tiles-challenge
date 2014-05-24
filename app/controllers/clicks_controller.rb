@@ -9,10 +9,11 @@ class ClicksController < ApplicationController
     respond_to do |format|
       if @click.save
         # format.html { redirect_to @click, notice: 'click was successfully created.' }
+        format.json { head :no_content }
         # format.json { render action: 'show', status: :created, location: @click }
       else
-        # format.html { render action: 'new' }
-        # format.json { render json: @click.errors, status: :unprocessable_entity }
+        format.html { render action: 'new' }
+        format.json { render json: @click.errors, status: :unprocessable_entity }
       end
     end
   end
