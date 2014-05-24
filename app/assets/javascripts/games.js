@@ -5,13 +5,13 @@ $(function() {
                   clicked_on: new Date };
     var cell = $(this);
     cell.empty()
-           .unbind('click');
+        .unbind('click');
     // console.log(data);
     $.post( '/clicks.json', data, function() {
       console.log('successful post')
-    }).fail( function(response) {
-      cell.css('background-color', 'red')
-      cell.text(response);  
+    }).fail( function() {
+        cell.css('background-color', 'red')
+        cell.text("error!");  
       });
   });
 });

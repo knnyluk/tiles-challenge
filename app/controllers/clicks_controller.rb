@@ -6,13 +6,12 @@ class ClicksController < ApplicationController
 
   def create
     @click = Click.new(click_params)
+    
     respond_to do |format|
-      if @click.save
-        # format.html { redirect_to @click, notice: 'click was successfully created.' }
+      if ClicksController.random_error?
+        @click.save
         format.json { head :no_content }
-        # format.json { render action: 'show', status: :created, location: @click }
       else
-        format.html { render action: 'new' }
         format.json { render json: @click.errors, status: :unprocessable_entity }
       end
     end
@@ -24,5 +23,9 @@ class ClicksController < ApplicationController
     # can specialize this method with per-user checking of permissible attributes.
     def click_params
       params.permit(:clicked_on, :tile_id)
+    end
+
+    def self.random_error?(success_chance=0.8)
+      rand < success_chance     
     end
 end
