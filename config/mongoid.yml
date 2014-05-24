@@ -77,4 +77,9 @@ test:
 production:
   sessions:
     default:
+        - oceanic.mongohq.com:10054
+        options:
+          skip_version_check: true
+          safe: true
       uri: <%= ENV['MONGOHQ_URL'] %>
+
