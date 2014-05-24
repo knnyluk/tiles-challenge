@@ -33,5 +33,8 @@ group :test, :development do
   gem 'rspec-rails', '>= 2.0.1'
 end
 
+group :development do
+  gem 'rails_12factor'
+end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
