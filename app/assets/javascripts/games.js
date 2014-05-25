@@ -1,6 +1,6 @@
 
 $(function() {
-  $('td').on('click', function() {
+  $('.game_tile').on('click', function() {
     var data = { tile_id: $(this).attr('id'),
                   clicked_on: new Date };
     var cell = $(this);
