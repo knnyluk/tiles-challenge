@@ -12,7 +12,7 @@ class ClicksController < ApplicationController
     
     respond_to do |format|
       if ClicksController.random_error?
-        # ClicksWorker.perform_async(time, id)
+        ClicksWorker.perform_async(time, id)
         format.json { head :no_content }
       else
         format.json { render json: @click.errors, status: :unprocessable_entity }
