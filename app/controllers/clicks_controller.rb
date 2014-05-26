@@ -6,9 +6,9 @@ class ClicksController < ApplicationController
 
   def create
     time, id = click_params[:clicked_on], click_params[:tile_id]
+    raise RuntimeError if ClicksController.random_error?
     respond_to do |format|
-      if ClicksController.random_error?
-        ClicksWorker.perform_async(time, id)
+      if ClicksWorker.perform_async(time, id)
         format.json { head :no_content }
       else
         format.json { render json: @click.errors, status: :unprocessable_entity }
@@ -29,6 +29,6 @@ class ClicksController < ApplicationController
     end
 
     def self.random_error?(success_chance=0.85)
-      rand < success_chance     
+      rand > success_chance     
     end
 end
