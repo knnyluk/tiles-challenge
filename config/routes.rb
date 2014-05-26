@@ -5,9 +5,6 @@ TilesChallenge::Application.routes.draw do
   require 'sidekiq/web'
   mount Sidekiq::Web  => 'sidekiq'
 
-  # match '/game', to: 'tiles#index', via:key => "value",  'get'
-  resources :tiles
-  resources :clicks
   get 'games/index'
   root 'games#index'
   match '/clicks', to: 'clicks#create', via: 'post'
