@@ -6,10 +6,6 @@ class ClicksController < ApplicationController
 
   def create
     time, id = click_params[:clicked_on], click_params[:tile_id]
-    
-
-    # @click = Click.new(click_params)
-    
     respond_to do |format|
       if ClicksController.random_error?
         ClicksWorker.perform_async(time, id)
@@ -18,6 +14,10 @@ class ClicksController < ApplicationController
         format.json { render json: @click.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def top_10
+    @top_10_tiles = Tile.all.sort { |x,y| y.clicks.count <=> x.clicks.count }.take(10)
   end
 
   private

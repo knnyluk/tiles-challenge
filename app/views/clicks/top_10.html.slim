@@ -1,0 +1,6 @@
+h1 The top 10 clicks
+ul#top_10 
+  - @top_10_tiles.each do |t|
+    <li class="top_click">#{t.name} was clicked #{t.clicks.count} times</li>
+.replay_holder
+  a.btn.btn-default.btn-primary.btn-lg#done type="button" href="/"  Play again

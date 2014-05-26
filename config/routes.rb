@@ -11,6 +11,7 @@ TilesChallenge::Application.routes.draw do
   get 'games/index'
   root 'games#index'
   match '/clicks', to: 'clicks#create', via: 'post'
+  match '/top_10', to: 'clicks#top_10', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
