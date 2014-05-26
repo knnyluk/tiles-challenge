@@ -5,3 +5,5 @@ table
     tr
       - row.each do |cell|
           <td><div class='game_tile' id="#{cell._id}">#{cell.name}</div></td>
+.done_holder
+  button.btn.btn-default.btn-primary.btn-lg#done type="button"  I'm done!
