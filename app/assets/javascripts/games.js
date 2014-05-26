@@ -1,6 +1,9 @@
 
 $(function() {
+  var clickCount = 0;
   $('.game_tile').on('click', function() {
+    clickCount++;
+    console.log(clickCount);
     var data = {    tile_id: $(this).attr('id'),
                  clicked_on: new Date };
     var cell = $(this);
