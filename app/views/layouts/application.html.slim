@@ -10,7 +10,7 @@ html
     = javascript_include_tag "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"
     = csrf_meta_tags
   body
-    nav.navbar.navbar-default.container-fluid role="navigation" 
+    nav.navbar.navbar-default.navbar-inverse.container-fluid role="navigation" 
       .container-fluid
         /! Brand and toggle get grouped for better mobile display
         .navbar-header
@@ -19,14 +19,10 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href="#"  Tile challenge
+          a.navbar-brand href="#" Tile Challenge
         /! Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav
-            li.active
-              a href="#"  Link
-            li
-              a href="#"  Link
             li.dropdown
               a.dropdown-toggle data-toggle="dropdown" href="#" 
                 | Dropdown
@@ -44,16 +40,13 @@ html
                 li.divider
                 li
                   a href="#"  One more separated link
-          form.navbar-form.navbar-left role="search" 
-            .form-group
-              input.form-control placeholder="Search" type="text" 
-            button.btn.btn-default type="submit"  Submit
+          
           ul.nav.navbar-nav.navbar-right
             li
               a href="https://github.com/charliehq/tiles-challenge"  Github repo
             li.dropdown
               a.dropdown-toggle data-toggle="dropdown" href="#" 
-                | Dropdown
+                | Control Panel
                 b.caret
               ul.dropdown-menu
                 li

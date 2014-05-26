@@ -28,7 +28,7 @@ class ClicksController < ApplicationController
       params.permit(:clicked_on, :tile_id)
     end
 
-    def self.random_error?(success_chance=0.8)
+    def self.random_error?(success_chance=0.85)
       rand < success_chance     
     end
 end
