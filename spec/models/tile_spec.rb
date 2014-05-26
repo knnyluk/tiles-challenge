@@ -1,5 +1,16 @@
 require 'spec_helper'
 
 describe Tile do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  before do
+    @tile = Tile.new(name: "Test Tile")
+  end  
+
+  subject { @tile }
+
+  it { should respond_to(:name) }
+  it { should respond_to(:clicks) }
+
+  it { should be_valid }
+
 end

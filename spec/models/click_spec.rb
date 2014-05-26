@@ -1,5 +1,15 @@
 require 'spec_helper'
 
 describe Click do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  before do
+    @click = Click.new(clicked_on: DateTime.new)
+  end
+
+  subject { @click }
+
+  it { should respond_to(:clicked_on) }
+  it { should respond_to(:tile) }
+
+  it { should be_valid }
 end
