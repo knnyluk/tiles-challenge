@@ -4,7 +4,7 @@
 
 The current app as specified only uses recorded clicks to choose the 10 ten clicked titles. To optimize for this situation, I would create a "total click" field for each tile record, so that the clicks for each tile would not need to be counted each time the top ten tiles by clicks are listed.
 
-If functionality of the app were to be expanded so that the click timestamp for each tile will need to be listed, the optimization would be different.  In this case, I would embed the timestamps for each click's tile within the tile record itself.  This would reduce the number query operations when pulling each tile's clicks.  Moves the lengthier operations to the record writing which is suitable for a asyncronous queue from a record queue which a app user is left waiting for.
+If functionality of the app were to be expanded so that the click timestamp for each tile will need to be listed, the optimization would be different.  In this case, I would embed the timestamps for each click's tile within the tile record itself.  This would reduce the number query operations when pulling each tile's clicks.  This also moves the lengthier database operations to record writing which is suitable for a asyncronous queue from the record querying which a app user waits for.
 
 
 # The Tiles Challenge 
