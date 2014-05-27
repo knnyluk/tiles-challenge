@@ -1,4 +1,4 @@
-[http://intense-dawn-2133.herokuapp.com/](heroku deployment)
+[heroku deployment](http://intense-dawn-2133.herokuapp.com/)
 
 # The Tiles Challenge 
 
